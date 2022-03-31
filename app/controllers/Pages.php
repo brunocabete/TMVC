@@ -6,14 +6,16 @@ class Pages extends Controller {
 
 
         $data = [
-            'title' => 'Welcome',
+            'title' => 'SharePosts',
+            'description' => 'Simple Social Network'
         ];
 
         $this->view('pages/index', $data);
     }
     public function about() {
         $data = [
-            'title' => 'About'
+            'title' => 'About',
+            'description' => 'Simple Website made for sharing posts'
         ];
         $this->view('pages/about', $data);
     }
