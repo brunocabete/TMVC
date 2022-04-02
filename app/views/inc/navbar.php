@@ -9,10 +9,6 @@
                   <li><a href="<?php echo URLROOT; ?>/pages/about" class="nav-link px-2 text-white">About</a></li>
               </ul>
 
-              <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                  <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-              </form>
-
               <div class="text-end">
                   <a href="<?php echo URLROOT; ?>/users/login" class="btn btn-outline-light me-2">Login</a>
                   <a href="<?php echo URLROOT; ?>/users/register" class="btn btn-info">Sign-up</a>
