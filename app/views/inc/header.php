@@ -12,5 +12,7 @@
     <script defer src="<?php echo URLROOT; ?>/js/main.js"></script>
 </head>
 
-<body>
-    <?php require APPROOT . '/views/inc/navbar.php' ?>
+<body class="bg-dark">
+    <header>
+        <?php require APPROOT . '/views/inc/navbar.php' ?>
+    </header>
