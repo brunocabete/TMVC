@@ -10,15 +10,15 @@ class Users extends Controller {
 
             // Process form
 
-            //Sanitize POSt data
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            //Sanitize POSt data (SWAPPED FOR THE HTMLSPECIALCHARS BELOW)
+            // $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             // Init Data
             $data = [
-                'name' => trim($_POST['name']),
-                'email' => trim($_POST['email']),
-                'password' => trim($_POST['password']),
-                'confirm_password' => trim($_POST['confirm_password']),
+                'name' => htmlspecialchars(trim($_POST['name'])),
+                'email' => htmlspecialchars(trim($_POST['email'])),
+                'password' => htmlspecialchars(trim($_POST['password'])),
+                'confirm_password' => htmlspecialchars(trim($_POST['confirm_password'])),
                 'name_err' => '',
                 'email_err' => '',
                 'password_err' => '',
@@ -63,6 +63,15 @@ class Users extends Controller {
 
                 // Hash password
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+
+
+                // Register User
+                if ($this->userModel->register($data)) {
+                    flash('register_success', 'You are registered and can login.');
+                    redirect('users/login');
+                } else {
+                    die('something went wrong');
+                }
             } else {
                 //Load view with errors
                 $this->view('users/register', $data);
@@ -88,12 +97,12 @@ class Users extends Controller {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Process form
             //Sanitize POSt data
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            // $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             // Init Data
             $data = [
-                'email' => trim($_POST['email']),
-                'password' => trim($_POST['password']),
+                'email' => htmlspecialchars(trim($_POST['email'])),
+                'password' => htmlspecialchars(trim($_POST['password'])),
                 'email_err' => '',
                 'password_err' => '',
             ];
