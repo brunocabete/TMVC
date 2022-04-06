@@ -9,10 +9,16 @@
                   <li><a href="<?php echo URLROOT; ?>/pages/about" class="nav-link px-2 text-white">About</a></li>
               </ul>
 
-              <div class="text-end">
-                  <a href="<?php echo URLROOT; ?>/users/login" class="btn btn-outline-light me-2">Login</a>
-                  <a href="<?php echo URLROOT; ?>/users/register" class="btn btn-info">Sign-up</a>
-              </div>
+              <?php if (isset($_SESSION['user_id'])) : ?>
+                  <div class="text-end">
+                      <a href="<?php echo URLROOT; ?>/users/logout" class="btn btn-outline-light me-2">Logout</a>
+                  </div>
+              <?php else : ?>
+                  <div class="text-end">
+                      <a href="<?php echo URLROOT; ?>/users/login" class="btn btn-outline-light me-2">Login</a>
+                      <a href="<?php echo URLROOT; ?>/users/register" class="btn btn-info">Sign-up</a>
+                  </div>
+              <?php endif; ?>
           </div>
       </div>
   </nav>
