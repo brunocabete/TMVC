@@ -9,7 +9,7 @@
                   <li><a href="<?php echo URLROOT; ?>/pages/about" class="nav-link px-2 text-white">About</a></li>
               </ul>
 
-              <?php if (isset($_SESSION['user_id'])) : ?>
+              <?php if (isLoggedIn()) : ?>
                   <div class="text-end">
                       <a href="<?php echo URLROOT; ?>/users/logout" class="btn btn-outline-light me-2">Logout</a>
                   </div>
