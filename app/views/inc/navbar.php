@@ -11,6 +11,7 @@
 
               <?php if (isLoggedIn()) : ?>
                   <div class="text-end">
+                      <span class="me-5">Welcome, <?php echo $_SESSION['user_name']; ?></span>
                       <a href="<?php echo URLROOT; ?>/users/logout" class="btn btn-outline-light me-2">Logout</a>
                   </div>
               <?php else : ?>

@@ -13,7 +13,7 @@
         <div class="d-flex justify-content-between">
 
             <a href="<?php echo URLROOT; ?>/posts/edit/<?php echo $data['post']->id; ?>" class="btn btn-warning">Edit</a>
-            <form action="<?php echo URLROOT; ?>/post/delete/<?php echo $data['post']->id; ?>" method="POST">
+            <form action="<?php echo URLROOT; ?>/posts/delete/<?php echo $data['post']->id; ?>" method="POST">
                 <input type="submit" value="Delete" class="btn btn-danger">
             </form>
         </div>
