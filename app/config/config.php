@@ -1,14 +1,18 @@
 <?php
 // DB Params
-define('DB_HOST', 'localhost');
-define('DB_USER', '_YOUR_USER_');
-define('DB_PASS', '_YOUR_PASS_');
-define('DB_NAME', '_YOUR_DBNAME_');
+$clearDBURL = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+define('DB_HOST', $clearDBURL['url']);
+define('DB_USER', $clearDBURL['user']);
+define('DB_PASS', $clearDBURL['pass']);
+define('DB_NAME', substr($clearDBURL["path"], 1));
 
 
 // App Root
 define('APPROOT', dirname(dirname(__FILE__)));
 // URL Root
-define('URLROOT', '_YOUR_URL_');
+define('URLROOT', 'http://localhost/shareposts');
 // Site Name
-define('SITENAME', '_YOUR_SITENAME_');
+define('SITENAME', 'SharePosts');
+
+define('APPVERSION', '1.0.0');

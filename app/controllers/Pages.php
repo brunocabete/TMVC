@@ -4,16 +4,20 @@ class Pages extends Controller {
     }
     public function index() {
 
-
+        if (isLoggedIn()) {
+            redirect('posts');
+        }
         $data = [
-            'title' => 'Welcome',
+            'title' => 'SharePosts',
+            'description' => 'Simple Social Network'
         ];
 
         $this->view('pages/index', $data);
     }
     public function about() {
         $data = [
-            'title' => 'About'
+            'title' => 'About',
+            'description' => 'Simple Website made for sharing posts'
         ];
         $this->view('pages/about', $data);
     }
