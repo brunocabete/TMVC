@@ -5,7 +5,7 @@ $clearDBURL = parse_url(getenv("CLEARDB_DATABASE_URL"));
 define('DB_HOST', $clearDBURL['url']);
 define('DB_USER', $clearDBURL['user']);
 define('DB_PASS', $clearDBURL['pass']);
-define('DB_NAME', substr($url["path"], 1));
+define('DB_NAME', substr($clearDBURL["path"], 1));
 
 
 // App Root
