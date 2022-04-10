@@ -1,9 +1,11 @@
 <?php
 // DB Params
-define('DB_HOST', 'localhost');
-define('DB_USER', 'admin');
-define('DB_PASS', 'admin');
-define('DB_NAME', 'shareposts');
+$clearDBURL = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+define('DB_HOST', $clearDBURL['url']);
+define('DB_USER', $clearDBURL['user']);
+define('DB_PASS', $clearDBURL['pass']);
+define('DB_NAME', substr($url["path"], 1));
 
 
 // App Root
