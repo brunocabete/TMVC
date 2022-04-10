@@ -1,6 +1,6 @@
 <?php
 // Load Config
-require __DIR__ . '/vendor/autoload.php';
+require '/vendor/autoload.php';
 require_once 'config/config.php';
 // Load Helpers
 require_once 'helpers/url_helper.php';
